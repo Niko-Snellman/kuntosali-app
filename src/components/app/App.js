@@ -14,6 +14,8 @@ import {
   Nav,
   NavItem,
 } from "reactstrap";
+import { Provider } from "react-redux";
+import store from "../../store";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,55 +24,40 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Provider store={store}>
+        <Header />
 
-      <BrowserRouter>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">kuntosali app</NavbarBrand>
-          <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink className="nav-link" to="/ohjelmat">
-                  Ohjelma
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="/tilastot">
-                  Tilastot
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="/päiväkirja">
-                  Päiväkirja
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
-        </Navbar>
+        <BrowserRouter>
+          <Navbar color="light" light expand="md">
+            <NavbarBrand href="/">kuntosali app</NavbarBrand>
+            <NavbarToggler onClick={toggle} />
+            <Collapse isOpen={isOpen} navbar>
+              <Nav className="mr-auto" navbar>
+                <NavItem>
+                  <NavLink className="nav-link" to="/ohjelmat">
+                    Ohjelma
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="nav-link" to="/tilastot">
+                    Tilastot
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink className="nav-link" to="/päiväkirja">
+                    Päiväkirja
+                  </NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
 
-        {/*<ul>
-          <li>
-            <NavLink to="/" exact>
-              Koti
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/ohjelmat">Ohjelma</NavLink>
-          </li>
-          <li>
-            <NavLink to="/tilastot">Tilastot</NavLink>
-          </li>
-          <li>
-            <NavLink to="/päiväkirja">Päiväkirja</NavLink>
-          </li>
-        </ul>*/}
-
-        <Route path="/" exact strict component={Home}></Route>
-        <Route path="/ohjelmat" component={Programs}></Route>
-        <Route path="/tilastot" component={Statistics}></Route>
-        <Route path="/päiväkirja" component={Diary}></Route>
-      </BrowserRouter>
+          <Route path="/" exact strict component={Home}></Route>
+          <Route path="/ohjelmat" component={Programs}></Route>
+          <Route path="/tilastot" component={Statistics}></Route>
+          <Route path="/päiväkirja" component={Diary}></Route>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

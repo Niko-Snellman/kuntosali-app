@@ -1,89 +1,49 @@
-import React from "react";
-import {
-  Card,
-  CardTitle,
-  CardText,
-  Button,
-  Container,
-  Row,
-  Col,
-  CardBody,
-} from "reactstrap";
+import React, { useState } from "react";
+import { Button, Container, Row, Col } from "reactstrap";
+import { Route, useHistory } from "react-router-dom";
+import NewProgram from "../newProgram/NewProgram";
+import ProgramsList from "../programsList/ProgramsList";
 
-const Programs = () => {
+const Programs = (props) => {
+  const [showList, setShowList] = useState(false);
+  const history = useHistory();
+  const programsPath = "/ohjelmat";
+  const newProgramPath = "/ohjelmat/uusi";
+
+  const createNewClick = () => {
+    setShowList(!showList);
+    if (showList) {
+      history.push(programsPath);
+    } else {
+      history.push(newProgramPath);
+    }
+  };
+
+  const buttonText = () => {
+    if (!showList) {
+      return "Luo uusi";
+    } else {
+      return "Peruuta";
+    }
+  };
+
+  if (props.location.pathname === newProgramPath && !showList) {
+    setShowList(true);
+  }
+
   return (
     <div>
-      <h2 className="m-4">Programs</h2>
-
       <Container className="mt-4">
         <Row>
           <Col className="mb-3">
-            <Button>Luo uusi</Button>
+            <h2>Programs</h2>
+
+            <Button onClick={createNewClick}>{buttonText()}</Button>
           </Col>
         </Row>
 
-        <Row>
-          <Col xs="auto" className="mb-3">
-            <Card body outline style={{ width: "18rem" }}>
-              <CardBody>
-                <CardTitle>Kortti 1</CardTitle>
-                <CardText>
-                  Kortin teksti weugbvuweguywge w ug wetgywe gweu guwefg uwe
-                  fufev ewtfvwuefuwefuwefv
-                </CardText>
-                <Button>Nappi</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xs="auto" className="mb-3">
-            <Card body outline style={{ width: "18rem" }}>
-              <CardBody>
-                <CardTitle>Kortti 2</CardTitle>
-                <CardText>
-                  Kortin teksti weugbvuweguywge w ug wetgywe gweu guwefg uwe
-                  fufev ewtfvwuefuwefuwefv
-                </CardText>
-                <Button>Nappi</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xs="auto" className="mb-3">
-            <Card body outline style={{ width: "18rem" }}>
-              <CardBody>
-                <CardTitle>Kortti 3</CardTitle>
-                <CardText>
-                  Kortin teksti weugbvuweguywge w ug wetgywe gweu guwefg uwe
-                  fufev ewtfvwuefuwefuwefv
-                </CardText>
-                <Button>Nappi</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xs="auto" className="mb-3">
-            <Card body outline style={{ width: "18rem" }}>
-              <CardBody>
-                <CardTitle>Kortti 4</CardTitle>
-                <CardText>
-                  Kortin teksti weugbvuweguywge w ug wetgywe gweu guwefg uwe
-                  fufev ewtfvwuefuwefuwefv
-                </CardText>
-                <Button>Nappi</Button>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col xs="auto" className="mb-3">
-            <Card body outline style={{ width: "18rem" }}>
-              <CardBody>
-                <CardTitle>Kortti 5</CardTitle>
-                <CardText>
-                  Kortin teksti weugbvuweguywge w ug wetgywe gweu guwefg uwe
-                  fufev ewtfvwuefuwefuwefv
-                </CardText>
-                <Button>Nappi</Button>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+        <Route exact path={newProgramPath} component={NewProgram} />
+        <Route exact path={programsPath} component={ProgramsList} />
       </Container>
     </div>
   );
