@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import ExerciseList from "../../exerciseList/ExerciseList";
+import axios from "axios";
 
 const NewProgram = () => {
   const exercisesArray = [
@@ -26,8 +27,6 @@ const NewProgram = () => {
   };
 
   const saveProgram = () => {
-    console.log(programName);
-    console.log(programDesc);
     let program = {
       name: programName,
       desc: programDesc,
@@ -35,6 +34,15 @@ const NewProgram = () => {
     };
 
     console.log(program);
+
+    axios
+      .post("http://localhost:3000/programs/", program)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const saveValue = (index, value, id) => {
