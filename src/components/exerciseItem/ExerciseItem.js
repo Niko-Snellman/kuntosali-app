@@ -1,12 +1,10 @@
 import React from "react";
 import { ListGroupItem, Row, Col, Label, Input } from "reactstrap";
 import PropTypes from "prop-types";
-import store from "../../store";
-import { connect } from "react-redux";
 
 const ExerciseItem = (props) => {
-  const handleNameChange = (e) => {
-    store.dispatch({ type: "ADD_EXERCISE", payload: { name: e.target.value } });
+  const handleChange = (e) => {
+    props.saveValue(props.id, e.target.value, e.target.id);
   };
 
   return (
@@ -19,7 +17,7 @@ const ExerciseItem = (props) => {
             type="text"
             name="liike"
             id="liikeName"
-            onChange={handleNameChange}
+            onChange={handleChange}
           />
         </Col>
         <Col md={2} className="align-self-end mb-1">
@@ -29,6 +27,7 @@ const ExerciseItem = (props) => {
             name="reps"
             id="reps"
             value={props.reps}
+            onChange={handleChange}
           />
         </Col>
         <Col md={2} className="align-self-end mb-1">
@@ -38,6 +37,7 @@ const ExerciseItem = (props) => {
             name="sets"
             id="sets"
             value={props.sets}
+            onChange={handleChange}
           />
         </Col>
         <Col md={2} className="align-self-end mb-1">
@@ -47,18 +47,13 @@ const ExerciseItem = (props) => {
             name="weight"
             id="weight"
             value={props.weight}
+            onChange={handleChange}
           />
         </Col>
       </Row>
     </ListGroupItem>
   );
 };
-
-export default connect((store) => {
-  return {
-    exercises: store.exercises.initialStore.exercises,
-  };
-})(ExerciseItem);
 
 ExerciseItem.propTypes = {
   name: PropTypes.string.isRequired,
@@ -67,4 +62,4 @@ ExerciseItem.propTypes = {
   weight: PropTypes.number,
 };
 
-//export default ExerciseItem;
+export default ExerciseItem;

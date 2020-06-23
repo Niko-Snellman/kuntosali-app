@@ -10,9 +10,53 @@ const NewProgram = () => {
   ];
 
   const [exercises, setExercises] = useState(exercisesArray);
+  const [programName, setProgramName] = useState("");
+  const [programDesc, setProgramDesc] = useState("");
 
   const addExercise = () => {
     setExercises([...exercises, { name: "" }]);
+  };
+
+  const handleNameChange = (event) => {
+    setProgramName(event.target.value);
+  };
+
+  const handleProgramDescChange = (event) => {
+    setProgramDesc(event.target.value);
+  };
+
+  const saveProgram = () => {
+    console.log(programName);
+    console.log(programDesc);
+    let program = {
+      name: programName,
+      desc: programDesc,
+      exercises: exercises,
+    };
+
+    console.log(program);
+  };
+
+  const saveValue = (index, value, id) => {
+    var exerArray = exercises;
+    switch (id) {
+      case "liikeName":
+        exerArray[index].name = value;
+        break;
+      case "reps":
+        exerArray[index].reps = value;
+        break;
+      case "sets":
+        exerArray[index].sets = value;
+        break;
+      case "weight":
+        exerArray[index].weight = value;
+        break;
+      default:
+        break;
+    }
+
+    setExercises(exerArray);
   };
 
   return (
@@ -21,15 +65,29 @@ const NewProgram = () => {
       <Form>
         <FormGroup className="border p-1">
           <Label for="programName">Nimi</Label>
-          <Input type="text" name="name" id="programName" />
+          <Input
+            onChange={handleNameChange}
+            type="text"
+            name="name"
+            id="programName"
+          />
           <Label for="programDesc">Kuvaus</Label>
-          <Input type="textarea" name="description" id="programDesc" />
+          <Input
+            onChange={handleProgramDescChange}
+            type="textarea"
+            name="description"
+            id="programDesc"
+          />
         </FormGroup>
         <FormGroup className="border p-1">
-          <ExerciseList addExercise={addExercise} exercises={exercises} />
+          <ExerciseList
+            addExercise={addExercise}
+            exercises={exercises}
+            saveValue={saveValue}
+          />
         </FormGroup>
         <FormGroup>
-          <Button>Tallenna</Button>
+          <Button onClick={saveProgram}>Tallenna</Button>
         </FormGroup>
       </Form>
     </div>

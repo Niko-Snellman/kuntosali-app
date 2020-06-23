@@ -4,10 +4,19 @@ import ExerciseItem from "../exerciseItem/ExerciseItem";
 import PropTypes from "prop-types";
 
 const ExerciseList = (props) => {
+  const saveValue = (index, value, id) => {
+    props.saveValue(index, value, id);
+  };
+
   return (
     <ListGroup>
       {props.exercises.map((exercise, index) => (
-        <ExerciseItem key={index} name={exercise.name}></ExerciseItem>
+        <ExerciseItem
+          key={index}
+          id={index}
+          name={exercise.name}
+          saveValue={saveValue}
+        ></ExerciseItem>
       ))}
       <ListGroupItem>
         <Button onClick={props.addExercise}>Lisää liike</Button>
