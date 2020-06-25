@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import ExerciseList from "../../exerciseList/ExerciseList";
+import ExerciseList from "../../components/exerciseList/ExerciseList";
 import axios from "axios";
 
 const NewProgram = () => {
@@ -39,9 +39,11 @@ const NewProgram = () => {
       .post("http://localhost:3000/programs/", program)
       .then((res) => {
         console.log(res);
+        alert("Ohjelema lisätty");
       })
       .catch((error) => {
         console.log(error);
+        alert("Ongelma ohjelman lisäyksessä");
       });
   };
 
