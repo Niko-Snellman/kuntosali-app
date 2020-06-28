@@ -1,0 +1,5 @@
+.custom-control-label::before,
+.custom-control-label::after {
+  width: 2rem !important;
+  height: 2rem !important;
+}

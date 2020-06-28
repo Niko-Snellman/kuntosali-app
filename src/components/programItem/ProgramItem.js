@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Card, CardBody, CardTitle, CardText, Button } from "reactstrap";
+import { Col, Card, CardTitle, CardText, Button } from "reactstrap";
 import PropTypes from "prop-types";
 import "./ProgramItem.css";
 

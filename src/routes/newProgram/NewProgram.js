@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import ExerciseList from "../../components/exerciseList/ExerciseList";
-import axios from "axios";
+import axios from "../../api/Axios";
 
 const NewProgram = () => {
   const exercisesArray = [
@@ -36,7 +36,7 @@ const NewProgram = () => {
     console.log(program);
 
     axios
-      .post("http://localhost:3000/programs/", program)
+      .post("/programs", program)
       .then((res) => {
         console.log(res);
         alert("Ohjelema lisätty");

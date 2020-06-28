@@ -41,7 +41,7 @@ function App() {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/päiväkirja">
+                <NavLink className="nav-link" to="/paivakirja">
                   Päiväkirja
                 </NavLink>
               </NavItem>
@@ -52,7 +52,7 @@ function App() {
         <Route path="/" exact strict component={Home}></Route>
         <Route path="/ohjelmat" component={Programs}></Route>
         <Route path="/tilastot" component={Statistics}></Route>
-        <Route path="/päiväkirja" component={Diary}></Route>
+        <Route path="/paivakirja" component={Diary}></Route>
       </BrowserRouter>
     </div>
   );

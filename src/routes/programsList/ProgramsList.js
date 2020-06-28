@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row } from "reactstrap";
-import axios from "axios";
 import ProgramItem from "../../components/programItem/ProgramItem";
+import axios from "../../api/Axios";
 
 const ProgramsList = () => {
   const [programArray, setProgramArray] = useState([]);
@@ -9,7 +9,7 @@ const ProgramsList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/programs/")
+      .get("/programs/")
       .then((result) => {
         console.log(result);
         setProgramArray(result.data);
