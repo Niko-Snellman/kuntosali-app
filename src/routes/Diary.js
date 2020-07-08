@@ -1,31 +1,30 @@
 import React, { useState } from "react";
-import { Route, useHistory } from "react-router-dom";
-import { Container, Row, Col, Button } from "reactstrap";
-import NewDiary from "../newDiary/NewDiary";
-import DiaryList from "../../components/diaryList/DiaryList";
+import { useHistory } from "react-router-dom";
+import { Container, Row, Col } from "reactstrap";
+import NewDiary from "./NewDiary";
 
 const Diary = (props) => {
   const [showList, setShowList] = useState(false);
   const history = useHistory();
-  const diaryPath = "/paivakirja";
+  //const diaryPath = "/paivakirja";
   const newDiaryPath = "/paivakirja/uusi";
 
-  const createNewClick = () => {
+  /*const createNewClick = () => {
     setShowList(!showList);
     if (showList) {
       history.push(diaryPath);
     } else {
       history.push(newDiaryPath);
     }
-  };
+  };*/
 
-  const buttonText = () => {
+  /*const buttonText = () => {
     if (!showList) {
       return "Luo uusi";
     } else {
       return "Peruuta";
     }
-  };
+  };*/
 
   if (props.location.pathname === newDiaryPath && !showList) {
     setShowList(true);
@@ -36,14 +35,12 @@ const Diary = (props) => {
       <Container className="mt-4">
         <Row>
           <Col className="mb-3">
-            <h2>Diary</h2>
-
-            <Button onClick={createNewClick}>{buttonText()}</Button>
+            <h2>Päiväkirja</h2>
           </Col>
         </Row>
-
-        <Route exact path={newDiaryPath} component={NewDiary} />
-        <Route exact path={diaryPath} component={DiaryList} />
+        <NewDiary />
+        {/*<Route exact path={newDiaryPath} component={NewDiary} />
+        <Route exact path={diaryPath} component={DiaryList} />*/}
       </Container>
     </div>
   );

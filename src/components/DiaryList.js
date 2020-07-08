@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ListGroup } from "reactstrap";
-import Axios from "../../api/Axios";
-import DiaryItem from "../diaryItem/DiaryItem";
+import Axios from "../api/Axios";
+import DiaryItem from "./DiaryItem";
 
 const DiaryList = () => {
   const [programDiary, setDiaryArray] = useState([]);

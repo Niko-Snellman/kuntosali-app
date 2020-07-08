@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "../header/Header";
 import { Route, NavLink, BrowserRouter } from "react-router-dom";
-import Diary from "../../routes/diary/Diary";
-import Home from "../../routes/home/Home";
-import Statistics from "../../routes/statistics/Statistics";
-import Programs from "../../routes/programs/Programs";
+import Diary from "../../routes/Diary";
+import Home from "../../routes/Home";
+import Statistics from "../../routes/Statistics";
+import Programs from "../../routes/Programs";
 import {
   Navbar,
   NavbarBrand,
@@ -32,17 +32,17 @@ function App() {
             <Nav className="mr-auto" navbar>
               <NavItem>
                 <NavLink className="nav-link" to="/ohjelmat">
-                  Ohjelma
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink className="nav-link" to="/tilastot">
-                  Tilastot
+                  Ohjelmat
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink className="nav-link" to="/paivakirja">
                   Päiväkirja
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="nav-link" to="/tilastot">
+                  Tilastot
                 </NavLink>
               </NavItem>
             </Nav>

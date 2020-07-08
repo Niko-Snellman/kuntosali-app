@@ -74,6 +74,7 @@ const DiaryExerciseItem = (props) => {
                   name="reps"
                   id="reps"
                   onChange={handleValueChange}
+                  min="0"
                 />
               </Col>
               <Col md={4}>
@@ -83,6 +84,7 @@ const DiaryExerciseItem = (props) => {
                   name="sets"
                   id="sets"
                   onChange={handleValueChange}
+                  min="0"
                 />
               </Col>
               <Col md={4}>
@@ -92,6 +94,7 @@ const DiaryExerciseItem = (props) => {
                   name="weight"
                   id="weight"
                   onChange={handleValueChange}
+                  min="0"
                 />
               </Col>
             </Row>

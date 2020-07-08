@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Button, Container, Row, Col } from "reactstrap";
 import { Route, useHistory } from "react-router-dom";
-import NewProgram from "../newProgram/NewProgram";
-import ProgramsList from "../programsList/ProgramsList";
+import NewProgram from "./NewProgram";
+import ProgramsList from "./ProgramsList";
 
 const Programs = (props) => {
   const [showList, setShowList] = useState(false);
@@ -36,7 +36,7 @@ const Programs = (props) => {
       <Container className="mt-4">
         <Row>
           <Col className="mb-3">
-            <h2>Programs</h2>
+            <h2>Ohjelmat</h2>
 
             <Button onClick={createNewClick}>{buttonText()}</Button>
           </Col>

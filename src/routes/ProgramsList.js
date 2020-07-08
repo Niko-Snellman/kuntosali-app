@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row } from "reactstrap";
-import ProgramItem from "../../components/programItem/ProgramItem";
-import axios from "../../api/Axios";
+import ProgramItem from "../components/programItem/ProgramItem";
+import axios from "../api/Axios";
 
 const ProgramsList = () => {
   const [programArray, setProgramArray] = useState([]);

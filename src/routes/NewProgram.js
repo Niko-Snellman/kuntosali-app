@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import ExerciseList from "../../components/exerciseList/ExerciseList";
-import axios from "../../api/Axios";
+import ExerciseList from "../components/ExerciseList";
+import axios from "../api/Axios";
 
 const NewProgram = () => {
   const exercisesArray = [
@@ -72,7 +72,7 @@ const NewProgram = () => {
   return (
     <div>
       <h3>Uusi ohjelma</h3>
-      <Form>
+      <Form onSubmit={saveProgram}>
         <FormGroup className="border p-1">
           <Label for="programName">Nimi</Label>
           <Input
@@ -80,7 +80,9 @@ const NewProgram = () => {
             type="text"
             name="name"
             id="programName"
+            required
           />
+
           <Label for="programDesc">Kuvaus</Label>
           <Input
             onChange={handleProgramDescChange}
@@ -97,7 +99,7 @@ const NewProgram = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Button onClick={saveProgram}>Tallenna</Button>
+          <Button>Tallenna</Button>
         </FormGroup>
       </Form>
     </div>

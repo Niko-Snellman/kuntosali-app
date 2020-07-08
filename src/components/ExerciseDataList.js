@@ -1,6 +1,6 @@
 import React from "react";
 import { ListGroup } from "reactstrap";
-import ExerciseDataItem from "../exerciseDataItem/ExerciseDataItem";
+import ExerciseDataItem from "./ExerciseDataItem";
 
 const ExerciseDataList = (props) => {
   let exercises = props.exercises;

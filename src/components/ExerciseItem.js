@@ -18,6 +18,7 @@ const ExerciseItem = (props) => {
             name="liike"
             id="liikeName"
             onChange={handleChange}
+            required
           />
         </Col>
         <Col md={2} className="align-self-end mb-1">

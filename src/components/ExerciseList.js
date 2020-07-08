@@ -1,6 +1,6 @@
 import React from "react";
 import { ListGroup, Button, ListGroupItem } from "reactstrap";
-import ExerciseItem from "../exerciseItem/ExerciseItem";
+import ExerciseItem from "./ExerciseItem";
 import PropTypes from "prop-types";
 
 const ExerciseList = (props) => {

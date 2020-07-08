@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Chart } from "react-charts";
 
 const ExerciseDataItem = (props) => {
@@ -44,8 +44,8 @@ const ExerciseDataItem = (props) => {
   );
 
   return (
-    <div>
-      <p>{exercise.name}</p>
+    <div className="mt-3">
+      <p className="font-weight-bold">{exercise.name}</p>
       <div
         style={{
           width: "100%",

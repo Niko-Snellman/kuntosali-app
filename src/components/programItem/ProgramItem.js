@@ -7,11 +7,11 @@ const ProgramItem = (props) => {
   return (
     <Col xs="auto" className="mb-3">
       <Card body outline style={{ width: "18rem" }}>
-        <CardTitle>{props.name}</CardTitle>
+        <CardTitle className="font-weight-bold">{props.name}</CardTitle>
         <CardText>{props.desc}</CardText>
-        <Button className="delete" color="danger">
+        {/*<Button className="delete" color="danger">
           X
-        </Button>
+        </Button>*/}
       </Card>
     </Col>
   );

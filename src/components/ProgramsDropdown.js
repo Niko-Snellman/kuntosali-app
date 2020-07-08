@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Dropdown, DropdownToggle, DropdownMenu } from "reactstrap";
-import ProgramOptionItem from "../programOptionItem/ProgramOptionItem";
+import ProgramOptionItem from "./ProgramOptionItem";
 
 const ProgramsDropdown = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);

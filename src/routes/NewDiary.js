@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Form, FormGroup, Button, Label, Input } from "reactstrap";
-import axios from "../../api/Axios";
-import DiaryExerciseList from "../../components/diaryExerciseList/DiaryExerciseList";
-import ProgramsDropdown from "../../components/programsDropdown/ProgramsDropdown";
+import axios from "../api/Axios";
+import DiaryExerciseList from "../components/DiaryExerciseList";
+import ProgramsDropdown from "../components/ProgramsDropdown";
 
-const NewDiary = (props) => {
+const NewDiary = () => {
   const currentDate = new Date().toISOString().substr(0, 10);
   const [programArray, setProgramArray] = useState([]);
   const [page, setPage] = useState(1);
@@ -28,31 +28,41 @@ const NewDiary = (props) => {
     setCompletionDate(e.target.value);
   };
 
-  const saveDiary = () => {
-    const selectedExercises = diaryExercises.filter((e) => e.checked);
+  const saveDiary = (event) => {
+    event.preventDefault();
+    console.log(completionDate);
+    if (program.exercises) {
+      const selectedExercises = diaryExercises.filter((e) => e.checked);
 
-    program.exercises.forEach((e) => {
-      const selectedExercise = selectedExercises.find((se) => {
-        return se.id === e._id;
-      });
-      if (selectedExercise) {
-        selectedExercise.completionDate = completionDate;
-        delete selectedExercise.checked;
-        e.exerciseData.push(selectedExercise);
+      if (selectedExercises && selectedExercises.length >= 1) {
+        program.exercises.forEach((e) => {
+          const selectedExercise = selectedExercises.find((se) => {
+            return se.id === e._id;
+          });
+          if (selectedExercise) {
+            selectedExercise.completionDate = completionDate;
+            delete selectedExercise.checked;
+            e.exerciseData.push(selectedExercise);
+          }
+        });
+
+        console.log(program);
+
+        axios
+          .post("/diary/", program)
+          .then((result) => {
+            console.log(result);
+            alert("Päiväkirjamerkintä tallennettu!");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      } else {
+        alert("Valitse ainakin yksi liike");
       }
-    });
-
-    console.log(program);
-
-    axios
-      .post("/diary/", program)
-      .then((result) => {
-        console.log(result);
-        alert("Päiväkirjamerkintä tallennettu!");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    } else {
+      alert("Valitse ohjelma");
+    }
   };
 
   const updateDiaryExercises = (diaryExercise) => {
@@ -76,7 +86,7 @@ const NewDiary = (props) => {
   return (
     <div>
       <h3>Lisää päiväkirjamerkintä</h3>
-      <Form>
+      <Form onSubmit={saveDiary}>
         <FormGroup className="border p-1">
           <Label for="diaryDate">Päivämäärä</Label>
           <Input
@@ -85,6 +95,7 @@ const NewDiary = (props) => {
             name="date"
             id="diaryDate"
             defaultValue={currentDate}
+            required
           />
         </FormGroup>
         <FormGroup>
@@ -100,7 +111,7 @@ const NewDiary = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Button onClick={saveDiary}>Tallenna</Button>
+          <Button>Tallenna</Button>
         </FormGroup>
       </Form>
     </div>

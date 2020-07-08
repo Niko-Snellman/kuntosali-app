@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
-import ProgramsDropdown from "../../components/programsDropdown/ProgramsDropdown";
-import Axios from "../../api/Axios";
-import ExerciseDataList from "../../components/exerciseDataList/ExerciseDataList";
+import ProgramsDropdown from "../components/ProgramsDropdown";
+import Axios from "../api/Axios";
+import ExerciseDataList from "../components/ExerciseDataList";
 
 const Statistics = () => {
   const [selectedProgram, setProgram] = useState({});
@@ -30,7 +30,7 @@ const Statistics = () => {
       <Container className="mt-4">
         <Row>
           <Col className="mb-3">
-            <h2>Statistics</h2>
+            <h2>Tilastot</h2>
           </Col>
         </Row>
 
