@@ -1,9 +1,12 @@
 import React from "react";
+import { Container } from "reactstrap";
 
 const Home = () => {
   return (
     <div>
-      <h2>Home</h2>
+      <Container className="mt-4">
+        <h2>Home</h2>
+      </Container>
     </div>
   );
 };

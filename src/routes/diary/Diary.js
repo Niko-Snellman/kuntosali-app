@@ -33,7 +33,7 @@ const Diary = (props) => {
 
   return (
     <div>
-      <Container>
+      <Container className="mt-4">
         <Row>
           <Col className="mb-3">
             <h2>Diary</h2>

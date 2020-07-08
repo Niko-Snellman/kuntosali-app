@@ -3,7 +3,11 @@ import { ListGroup } from "reactstrap";
 import DiaryExerciseItem from "../diaryExerciseItem/DiaryExerciseItem";
 
 const DiaryExerciseList = (props) => {
-  const exercises = props.exercises;
+  var exercises = props.exercises;
+
+  if (!exercises) {
+    exercises = [];
+  }
 
   const updateDiaryExercises = (diaryExercise) => {
     props.updateDiaryExercises(diaryExercise);

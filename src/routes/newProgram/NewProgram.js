@@ -59,13 +59,13 @@ const NewProgram = () => {
       case "sets":
         exerArray[index].sets = value;
         break;
-      case "weight":
-        exerArray[index].weight = value;
+      case "weights":
+        exerArray[index].weights = value;
         break;
       default:
         break;
     }
-
+    exerArray[index].exerciseData = [];
     setExercises(exerArray);
   };
 

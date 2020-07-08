@@ -5,7 +5,7 @@ const ProgramOptionItem = (props) => {
   const program = props.program;
 
   const handleSelect = () => {
-    props.itemSelect(program.exercises);
+    props.itemSelect(program);
   };
 
   return (

@@ -1,25 +1,14 @@
 import React, { useState, useEffect } from "react";
-import {
-  Form,
-  FormGroup,
-  Button,
-  Label,
-  Input,
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-} from "reactstrap";
+import { Form, FormGroup, Button, Label, Input } from "reactstrap";
 import axios from "../../api/Axios";
-import ProgramOptionItem from "../../components/programOptionItem/ProgramOptionItem";
 import DiaryExerciseList from "../../components/diaryExerciseList/DiaryExerciseList";
+import ProgramsDropdown from "../../components/programsDropdown/ProgramsDropdown";
 
 const NewDiary = (props) => {
   const currentDate = new Date().toISOString().substr(0, 10);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
   const [programArray, setProgramArray] = useState([]);
   const [page, setPage] = useState(1);
-  const [exercises, setExercises] = useState([]);
+  const [program, setProgram] = useState({});
   const [diaryExercises, setDiaryExercises] = useState([]);
   const [completionDate, setCompletionDate] = useState(currentDate);
 
@@ -42,27 +31,21 @@ const NewDiary = (props) => {
   const saveDiary = () => {
     const selectedExercises = diaryExercises.filter((e) => e.checked);
 
-    const program = programArray.find((p) => {
-      const index = p.exercises.findIndex(
-        (e) => e._id === selectedExercises[0].id
-      );
-
-      if (index === -1) {
-        return false;
+    program.exercises.forEach((e) => {
+      const selectedExercise = selectedExercises.find((se) => {
+        return se.id === e._id;
+      });
+      if (selectedExercise) {
+        selectedExercise.completionDate = completionDate;
+        delete selectedExercise.checked;
+        e.exerciseData.push(selectedExercise);
       }
-      return true;
     });
 
     console.log(program);
 
-    const diaryObject = {
-      programId: program._id,
-      exercises: selectedExercises,
-      completionDate: completionDate,
-    };
-
     axios
-      .post("/diary/", diaryObject)
+      .post("/diary/", program)
       .then((result) => {
         console.log(result);
         alert("Päiväkirjamerkintä tallennettu!");
@@ -85,9 +68,9 @@ const NewDiary = (props) => {
     setDiaryExercises(exerArray);
   };
 
-  const handleSelect = (exercises) => {
-    console.log(exercises);
-    setExercises(exercises);
+  const handleSelect = (program) => {
+    console.log(program.exercises);
+    setProgram(program);
   };
 
   return (
@@ -105,22 +88,14 @@ const NewDiary = (props) => {
           />
         </FormGroup>
         <FormGroup>
-          <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-            <DropdownToggle caret>Ohjelmat</DropdownToggle>
-            <DropdownMenu>
-              {programArray.map((p) => (
-                <ProgramOptionItem
-                  program={p}
-                  key={p._id}
-                  itemSelect={handleSelect}
-                />
-              ))}
-            </DropdownMenu>
-          </Dropdown>
+          <ProgramsDropdown
+            programArray={programArray}
+            handleSelect={handleSelect}
+          />
         </FormGroup>
         <FormGroup>
           <DiaryExerciseList
-            exercises={exercises}
+            exercises={program.exercises}
             updateDiaryExercises={updateDiaryExercises}
           />
         </FormGroup>

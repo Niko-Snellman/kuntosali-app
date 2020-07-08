@@ -44,8 +44,8 @@ const ExerciseItem = (props) => {
           <Input
             placeholder="Painot(Kg)"
             type="number"
-            name="weight"
-            id="weight"
+            name="weights"
+            id="weights"
             value={props.weight}
             onChange={handleChange}
           />
