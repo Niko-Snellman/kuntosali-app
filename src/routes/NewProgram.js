@@ -26,14 +26,16 @@ const NewProgram = () => {
     setProgramDesc(event.target.value);
   };
 
-  const saveProgram = () => {
+  const saveProgram = (e) => {
+    e.preventDefault();
+
     let program = {
       name: programName,
       desc: programDesc,
       exercises: exercises,
     };
 
-    console.log(program);
+    console.log("ohjelma : ", program);
 
     axios
       .post("/programs", program)
