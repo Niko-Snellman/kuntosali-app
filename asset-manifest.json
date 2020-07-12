@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kuntosali-app/static/css/main.b7fac8f2.chunk.css",
+    "main.css": "/kuntosali-app/static/css/main.82de206d.chunk.css",
     "main.js": "/kuntosali-app/static/js/main.05512503.chunk.js",
     "main.js.map": "/kuntosali-app/static/js/main.05512503.chunk.js.map",
     "runtime-main.js": "/kuntosali-app/static/js/runtime-main.2785f81a.js",
@@ -9,17 +9,17 @@
     "static/js/2.3be64961.chunk.js": "/kuntosali-app/static/js/2.3be64961.chunk.js",
     "static/js/2.3be64961.chunk.js.map": "/kuntosali-app/static/js/2.3be64961.chunk.js.map",
     "index.html": "/kuntosali-app/index.html",
-    "precache-manifest.66ba40957ad87c58df58bf1849c6f9f4.js": "/kuntosali-app/precache-manifest.66ba40957ad87c58df58bf1849c6f9f4.js",
+    "precache-manifest.271c9116bffc01e9d6512fdb2049ad43.js": "/kuntosali-app/precache-manifest.271c9116bffc01e9d6512fdb2049ad43.js",
     "service-worker.js": "/kuntosali-app/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/kuntosali-app/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.b7fac8f2.chunk.css.map": "/kuntosali-app/static/css/main.b7fac8f2.chunk.css.map",
+    "static/css/main.82de206d.chunk.css.map": "/kuntosali-app/static/css/main.82de206d.chunk.css.map",
     "static/js/2.3be64961.chunk.js.LICENSE.txt": "/kuntosali-app/static/js/2.3be64961.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2785f81a.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.3be64961.chunk.js",
-    "static/css/main.b7fac8f2.chunk.css",
+    "static/css/main.82de206d.chunk.css",
     "static/js/main.05512503.chunk.js"
   ]
 }
