@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kuntosali-app/precache-manifest.271c9116bffc01e9d6512fdb2049ad43.js"
+  "/kuntosali-app/precache-manifest.7922f2503109e8d74492aa635156d504.js"
 );
 
 self.addEventListener('message', (event) => {
