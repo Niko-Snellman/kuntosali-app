@@ -26,7 +26,7 @@ function App() {
 
       <BrowserRouter>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">kuntosali app</NavbarBrand>
+          <NavbarBrand href="/kuntosali-app">kuntosali app</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
@@ -49,7 +49,7 @@ function App() {
           </Collapse>
         </Navbar>
 
-        <Route path="/" exact strict component={Home}></Route>
+        <Route path="/kuntosali-app" exact strict component={Home}></Route>
         <Route path="/ohjelmat" component={Programs}></Route>
         <Route path="/tilastot" component={Statistics}></Route>
         <Route path="/paivakirja" component={Diary}></Route>

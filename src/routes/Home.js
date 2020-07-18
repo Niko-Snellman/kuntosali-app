@@ -7,7 +7,7 @@ const Home = () => {
       <Container className="mt-4">
         <Row>
           <Col className="mb-3">
-            <h2>Home</h2>
+            <h2>Sivun tarkoitus</h2>
             <p>
               Kuntosali App on sovellus, jonka avulla voi seurata omaa
               kehittymistä kuntosalilla.
