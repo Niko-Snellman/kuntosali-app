@@ -36,7 +36,7 @@ const Programs = (props) => {
       <Container className="mt-4">
         <Row>
           <Col className="mb-3">
-            <h2>Ohjelmat</h2>
+            <h2>Ohjelmat2</h2>
 
             <Button onClick={createNewClick}>{buttonText()}</Button>
           </Col>
