@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ddc72a070598a9929331db6bcdfa9472",
+    "revision": "5a9505f5eea1830334d48e07b3e18d1e",
     "url": "/kuntosali-app/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kuntosali-app/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "470892304f804a47caff",
+    "revision": "0f98f97b018834e37c90",
     "url": "/kuntosali-app/static/css/main.82de206d.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kuntosali-app/static/js/2.3be64961.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "470892304f804a47caff",
-    "url": "/kuntosali-app/static/js/main.542cbdc4.chunk.js"
+    "revision": "0f98f97b018834e37c90",
+    "url": "/kuntosali-app/static/js/main.e9f4b003.chunk.js"
   },
   {
     "revision": "3808e2d73e4e2121933f",
