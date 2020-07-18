@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/kuntosali-app/static/css/main.82de206d.chunk.css",
-    "main.js": "/kuntosali-app/static/js/main.8bcbac99.chunk.js",
-    "main.js.map": "/kuntosali-app/static/js/main.8bcbac99.chunk.js.map",
+    "main.js": "/kuntosali-app/static/js/main.aaf28d33.chunk.js",
+    "main.js.map": "/kuntosali-app/static/js/main.aaf28d33.chunk.js.map",
     "runtime-main.js": "/kuntosali-app/static/js/runtime-main.2785f81a.js",
     "runtime-main.js.map": "/kuntosali-app/static/js/runtime-main.2785f81a.js.map",
     "static/css/2.af3c1da9.chunk.css": "/kuntosali-app/static/css/2.af3c1da9.chunk.css",
     "static/js/2.3be64961.chunk.js": "/kuntosali-app/static/js/2.3be64961.chunk.js",
     "static/js/2.3be64961.chunk.js.map": "/kuntosali-app/static/js/2.3be64961.chunk.js.map",
     "index.html": "/kuntosali-app/index.html",
-    "precache-manifest.75a7abf03395f83e1d388b3a360ef744.js": "/kuntosali-app/precache-manifest.75a7abf03395f83e1d388b3a360ef744.js",
+    "precache-manifest.9494746a20bf59b4809fb2c5c80035f9.js": "/kuntosali-app/precache-manifest.9494746a20bf59b4809fb2c5c80035f9.js",
     "service-worker.js": "/kuntosali-app/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/kuntosali-app/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.82de206d.chunk.css.map": "/kuntosali-app/static/css/main.82de206d.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.3be64961.chunk.js",
     "static/css/main.82de206d.chunk.css",
-    "static/js/main.8bcbac99.chunk.js"
+    "static/js/main.aaf28d33.chunk.js"
   ]
 }
