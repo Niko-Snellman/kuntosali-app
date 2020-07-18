@@ -49,10 +49,15 @@ function App() {
           </Collapse>
         </Navbar>
 
-        <Route path="/kuntosali-app" exact strict component={Home}></Route>
-        <Route path="/ohjelmat" component={Programs}></Route>
-        <Route path="/tilastot" component={Statistics}></Route>
-        <Route path="/paivakirja" component={Diary}></Route>
+        <Route
+          path="/kuntosali-app/etusivu"
+          exact
+          strict
+          component={Home}
+        ></Route>
+        <Route path="/kuntosali-app/ohjelmat" component={Programs}></Route>
+        <Route path="/kuntosali-app/tilastot" component={Statistics}></Route>
+        <Route path="/kuntosali-app/paivakirja" component={Diary}></Route>
       </BrowserRouter>
     </div>
   );
