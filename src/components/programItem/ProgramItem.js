@@ -9,9 +9,9 @@ const ProgramItem = (props) => {
       <Card body outline style={{ width: "18rem" }}>
         <CardTitle className="font-weight-bold">{props.name}</CardTitle>
         <CardText>{props.desc}</CardText>
-        {/*<Button className="delete" color="danger">
+        <Button className="delete" color="danger">
           X
-        </Button>*/}
+        </Button>
       </Card>
     </Col>
   );
