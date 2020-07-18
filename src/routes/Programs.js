@@ -7,8 +7,8 @@ import ProgramsList from "./ProgramsList";
 const Programs = (props) => {
   const [showList, setShowList] = useState(false);
   const history = useHistory();
-  const programsPath = "/ohjelmat";
-  const newProgramPath = "/ohjelmat/uusi";
+  const programsPath = "/kuntosali-app/ohjelmat";
+  const newProgramPath = "/kuntosali-app/ohjelmat/uusi";
 
   const createNewClick = () => {
     setShowList(!showList);

@@ -7,7 +7,7 @@ const Diary = (props) => {
   const [showList, setShowList] = useState(false);
   const history = useHistory();
   //const diaryPath = "/paivakirja";
-  const newDiaryPath = "/paivakirja/uusi";
+  const newDiaryPath = "/kuntosali-app/paivakirja/uusi";
 
   /*const createNewClick = () => {
     setShowList(!showList);
