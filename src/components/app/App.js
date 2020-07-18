@@ -26,22 +26,22 @@ function App() {
 
       <BrowserRouter>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/kuntosali-app">kuntosali app</NavbarBrand>
+          <NavbarBrand href="/">kuntosali app</NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink className="nav-link" to="/ohjelmat">
+                <NavLink className="nav-link" to="/kuntosali-app/ohjelmat">
                   Ohjelmat
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/paivakirja">
+                <NavLink className="nav-link" to="/kuntosali-app/paivakirja">
                   Päiväkirja
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink className="nav-link" to="/tilastot">
+                <NavLink className="nav-link" to="/kuntosali-app/tilastot">
                   Tilastot
                 </NavLink>
               </NavItem>
@@ -49,12 +49,7 @@ function App() {
           </Collapse>
         </Navbar>
 
-        <Route
-          path="/kuntosali-app/etusivu"
-          exact
-          strict
-          component={Home}
-        ></Route>
+        <Route path="/" exact strict component={Home}></Route>
         <Route path="/kuntosali-app/ohjelmat" component={Programs}></Route>
         <Route path="/kuntosali-app/tilastot" component={Statistics}></Route>
         <Route path="/kuntosali-app/paivakirja" component={Diary}></Route>
