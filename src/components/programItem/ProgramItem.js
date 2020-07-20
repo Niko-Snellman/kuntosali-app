@@ -7,12 +7,16 @@ import axios from "../../api/Axios";
 const ProgramItem = (props) => {
   const handleClick = () => {
     axios
-      .delete("/programs/", { id: props.id })
+      .delete("/programs/", { data: { id: props.id } })
       .then((result) => {
         console.log(result);
+        alert("Ohjelma poistettu!");
+
+        props.removeItem(props.id);
       })
       .catch((error) => {
         console.log(error);
+        alert("Ohjelman poistaminen epäonnistui!");
       });
   };
 

@@ -19,10 +19,22 @@ const ProgramsList = () => {
       });
   }, [page]);
 
+  const removeItem = (id) => {
+    const programs = programArray;
+
+    setProgramArray(programs.filter((p) => p._id != id));
+  };
+
   return (
     <Row>
       {programArray.map((p) => (
-        <ProgramItem key={p._id} name={p.name} desc={p.desc} id={p._id} />
+        <ProgramItem
+          key={p._id}
+          name={p.name}
+          desc={p.desc}
+          id={p._id}
+          removeItem={removeItem}
+        />
       ))}
     </Row>
   );
