@@ -22,7 +22,7 @@ const ProgramsList = () => {
   return (
     <Row>
       {programArray.map((p) => (
-        <ProgramItem key={p._id} name={p.name} desc={p.desc} />
+        <ProgramItem key={p._id} name={p.name} desc={p.desc} id={p._id} />
       ))}
     </Row>
   );
