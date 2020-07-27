@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import NewDiary from "./NewDiary";
 
 const Diary = (props) => {
   const [showList, setShowList] = useState(false);
-  const history = useHistory();
+  //const history = useHistory();
   //const diaryPath = "/paivakirja";
   const newDiaryPath = "/kuntosali-app/paivakirja/uusi";
 

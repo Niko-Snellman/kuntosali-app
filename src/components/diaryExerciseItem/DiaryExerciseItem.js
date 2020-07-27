@@ -24,6 +24,92 @@ const DiaryExerciseItem = (props) => {
   const [diaryExercise, setDiaryExercise] = useState(diaryExerciseDefault);
   const exercise = props.exercise;
 
+  const sortData = (exerciseData) => {
+    return exerciseData.sort((a, b) => {
+      const c = new Date(a.completionDate);
+      const d = new Date(b.completionDate);
+      return d - c;
+    });
+  };
+
+  const setsPlaceholder = () => {
+    let placeholder = "";
+
+    const exerciseData = exercise.exerciseData;
+
+    if (exerciseData && exerciseData.length > 0) {
+      const sortedData = sortData(exerciseData);
+
+      const sets = sortedData[0].sets;
+
+      if (sets) {
+        placeholder = "Sarjat (" + sets + ")";
+      } else if (exercise.sets) {
+        placeholder = "Sarjat (" + exercise.sets + ")";
+      } else {
+        placeholder = "Sarjat";
+      }
+    } else if (exercise.sets) {
+      placeholder = "Sarjat (" + exercise.sets + ")";
+    } else {
+      placeholder = "Sarjat";
+    }
+
+    return placeholder;
+  };
+
+  const repsPlaceholder = () => {
+    let placeholder = "";
+
+    const exerciseData = exercise.exerciseData;
+
+    if (exerciseData && exerciseData.length > 0) {
+      const sortedData = sortData(exerciseData);
+
+      const reps = sortedData[0].reps;
+
+      if (reps) {
+        placeholder = "Toistot (" + reps + ")";
+      } else if (exercise.reps) {
+        placeholder = "Toistot (" + exercise.reps + ")";
+      } else {
+        placeholder = "Toistot";
+      }
+    } else if (exercise.reps) {
+      placeholder = "Toistot (" + exercise.reps + ")";
+    } else {
+      placeholder = "Toistot";
+    }
+
+    return placeholder;
+  };
+
+  const weightsPlaceholder = () => {
+    let placeholder = "";
+
+    const exerciseData = exercise.exerciseData;
+
+    if (exerciseData && exerciseData.length > 0) {
+      const sortedData = sortData(exerciseData);
+
+      const weights = sortedData[0].weights;
+
+      if (weights) {
+        placeholder = "Painot (" + weights + " Kg)";
+      } else if (exercise.weights) {
+        placeholder = "Painot (" + exercise.weights + "Kg)";
+      } else {
+        placeholder = "Painot (Kg)";
+      }
+    } else if (exercise.weights) {
+      placeholder = "Painot (" + exercise.weights + " Kg)";
+    } else {
+      placeholder = "Painot (Kg)";
+    }
+
+    return placeholder;
+  };
+
   const handleValueChange = (e) => {
     const temp = diaryExercise;
     temp.id = exercise._id;
@@ -69,7 +155,7 @@ const DiaryExerciseItem = (props) => {
             <Row>
               <Col md={4}>
                 <Input
-                  placeholder="Toistot"
+                  placeholder={repsPlaceholder()}
                   type="number"
                   name="reps"
                   id="reps"
@@ -79,7 +165,7 @@ const DiaryExerciseItem = (props) => {
               </Col>
               <Col md={4}>
                 <Input
-                  placeholder="Sarjat"
+                  placeholder={setsPlaceholder()}
                   type="number"
                   name="sets"
                   id="sets"
@@ -89,7 +175,7 @@ const DiaryExerciseItem = (props) => {
               </Col>
               <Col md={4}>
                 <Input
-                  placeholder="Painot(Kg)"
+                  placeholder={weightsPlaceholder()}
                   type="number"
                   name="weight"
                   id="weight"

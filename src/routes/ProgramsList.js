@@ -22,7 +22,7 @@ const ProgramsList = () => {
   const removeItem = (id) => {
     const programs = programArray;
 
-    setProgramArray(programs.filter((p) => p._id != id));
+    setProgramArray(programs.filter((p) => p._id !== id));
   };
 
   return (
