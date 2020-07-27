@@ -18,7 +18,7 @@ const Diary = (props) => {
     }
   };*/
 
-  /*const buttonText = () => {
+  /*const buttonText = ()  => {
     if (!showList) {
       return "Luo uusi";
     } else {
