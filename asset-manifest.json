@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/kuntosali-app/static/css/main.82de206d.chunk.css",
-    "main.js": "/kuntosali-app/static/js/main.98c6a7a1.chunk.js",
-    "main.js.map": "/kuntosali-app/static/js/main.98c6a7a1.chunk.js.map",
+    "main.js": "/kuntosali-app/static/js/main.e30735fa.chunk.js",
+    "main.js.map": "/kuntosali-app/static/js/main.e30735fa.chunk.js.map",
     "runtime-main.js": "/kuntosali-app/static/js/runtime-main.2785f81a.js",
     "runtime-main.js.map": "/kuntosali-app/static/js/runtime-main.2785f81a.js.map",
     "static/css/2.af3c1da9.chunk.css": "/kuntosali-app/static/css/2.af3c1da9.chunk.css",
-    "static/js/2.3be64961.chunk.js": "/kuntosali-app/static/js/2.3be64961.chunk.js",
-    "static/js/2.3be64961.chunk.js.map": "/kuntosali-app/static/js/2.3be64961.chunk.js.map",
+    "static/js/2.b4739ae3.chunk.js": "/kuntosali-app/static/js/2.b4739ae3.chunk.js",
+    "static/js/2.b4739ae3.chunk.js.map": "/kuntosali-app/static/js/2.b4739ae3.chunk.js.map",
     "index.html": "/kuntosali-app/index.html",
-    "precache-manifest.56cac2ea77113ec47d65e1cd65a30195.js": "/kuntosali-app/precache-manifest.56cac2ea77113ec47d65e1cd65a30195.js",
+    "precache-manifest.f91d1d01a45957bb46f9d6246fb5943b.js": "/kuntosali-app/precache-manifest.f91d1d01a45957bb46f9d6246fb5943b.js",
     "service-worker.js": "/kuntosali-app/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/kuntosali-app/static/css/2.af3c1da9.chunk.css.map",
     "static/css/main.82de206d.chunk.css.map": "/kuntosali-app/static/css/main.82de206d.chunk.css.map",
-    "static/js/2.3be64961.chunk.js.LICENSE.txt": "/kuntosali-app/static/js/2.3be64961.chunk.js.LICENSE.txt"
+    "static/js/2.b4739ae3.chunk.js.LICENSE.txt": "/kuntosali-app/static/js/2.b4739ae3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2785f81a.js",
     "static/css/2.af3c1da9.chunk.css",
-    "static/js/2.3be64961.chunk.js",
+    "static/js/2.b4739ae3.chunk.js",
     "static/css/main.82de206d.chunk.css",
-    "static/js/main.98c6a7a1.chunk.js"
+    "static/js/main.e30735fa.chunk.js"
   ]
 }
