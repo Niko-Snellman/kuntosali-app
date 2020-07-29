@@ -9,6 +9,7 @@ const ExerciseDataItem = (props) => {
   const setData = [];
   const weightData = [];
 
+  //Otetaan harjoituksen datasta toistot, sarjat ja painot ja jaetaan ne omiin listoihin.
   exerciseData.forEach((data) => {
     const dateTime = Date.parse(data.completionDate);
 
@@ -17,6 +18,7 @@ const ExerciseDataItem = (props) => {
     weightData.push({ x: dateTime, y: data.weights });
   });
 
+  //Muodostetaan viivakaavion arvot
   const data = React.useMemo(
     () => [
       {
@@ -35,6 +37,7 @@ const ExerciseDataItem = (props) => {
     []
   );
 
+  //Viivakaavion akselit
   const axes = React.useMemo(
     () => [
       { primary: true, type: "time", position: "bottom" },

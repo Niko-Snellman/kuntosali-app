@@ -19,6 +19,7 @@ const DiaryList = () => {
       });
   }, [page]);
 
+  //Suodatetaan kaikki duplikaatit
   function filterDuplicates(arr, comp) {
     const unique = arr
       .map((e) => e[comp])

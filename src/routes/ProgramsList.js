@@ -7,6 +7,7 @@ const ProgramsList = () => {
   const [programArray, setProgramArray] = useState([]);
   const [page, setPage] = useState(1);
 
+  //Hakee kaikki ohjelmat rajapinnasta
   useEffect(() => {
     axios
       .get("/programs/")
@@ -19,6 +20,7 @@ const ProgramsList = () => {
       });
   }, [page]);
 
+  //Poistaa ohjelman statesta id:n perusteella
   const removeItem = (id) => {
     const programs = programArray;
 

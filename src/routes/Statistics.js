@@ -9,6 +9,7 @@ const Statistics = () => {
   const [page, setPage] = useState(1);
   const [programArray, setProgramArray] = useState([]);
 
+  //Hakee kaikki ohjelmat rajapinnasta
   useEffect(() => {
     Axios.get("/programs/")
       .then((result) => {
@@ -20,6 +21,7 @@ const Statistics = () => {
       });
   }, [page]);
 
+  //Valitaan ohjelma dropdown valikosta stateen
   const handleSelect = (program) => {
     console.log(program);
     setProgram(program);

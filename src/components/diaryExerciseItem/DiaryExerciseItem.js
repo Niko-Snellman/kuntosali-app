@@ -11,20 +11,19 @@ import {
 import "./DiaryExerciseItem.css";
 
 const DiaryExerciseItem = (props) => {
+  //Oletusarvo tyhjälle harjoitukselle
   const diaryExerciseDefault = {
     checked: false,
     sets: "",
     reps: "",
     weights: "",
   };
-  const [checked, setChecked] = useState(false);
-  const [reps, setReps] = useState("");
-  const [sets, setSets] = useState("");
-  const [weights, setWeights] = useState("");
+
   const [diaryExercise, setDiaryExercise] = useState(diaryExerciseDefault);
   const exercise = props.exercise;
 
-  const sortData = (exerciseData) => {
+  //Järjestää harjoituksen suoritukset päivämäärän mukaan suuresta pienimpään.
+  const sortDataByDate = (exerciseData) => {
     return exerciseData.sort((a, b) => {
       const c = new Date(a.completionDate);
       const d = new Date(b.completionDate);
@@ -32,13 +31,14 @@ const DiaryExerciseItem = (props) => {
     });
   };
 
+  //Asettaa placeholderin sarjojen kenttään. Sarjat tekstin jälkeen tulee viimeksi suoritetun harjoituksen sarjat tai harjoitukselle asetetut sarjat.
   const setsPlaceholder = () => {
     let placeholder = "";
 
     const exerciseData = exercise.exerciseData;
 
     if (exerciseData && exerciseData.length > 0) {
-      const sortedData = sortData(exerciseData);
+      const sortedData = sortDataByDate(exerciseData);
 
       const sets = sortedData[0].sets;
 
@@ -58,13 +58,14 @@ const DiaryExerciseItem = (props) => {
     return placeholder;
   };
 
+  //Asettaa placeholderin toistojen kenttään. Toistot tekstin jälkeen tulee viimeksi suoritetun harjoituksen toistot tai harjoitukselle asetetut toistot.
   const repsPlaceholder = () => {
     let placeholder = "";
 
     const exerciseData = exercise.exerciseData;
 
     if (exerciseData && exerciseData.length > 0) {
-      const sortedData = sortData(exerciseData);
+      const sortedData = sortDataByDate(exerciseData);
 
       const reps = sortedData[0].reps;
 
@@ -84,13 +85,14 @@ const DiaryExerciseItem = (props) => {
     return placeholder;
   };
 
+  //Asettaa placeholderin painon kenttään. Painot tekstin jälkeen tulee viimeksi suoritetun harjoituksen painot tai harjoitukselle asetetut painot.
   const weightsPlaceholder = () => {
     let placeholder = "";
 
     const exerciseData = exercise.exerciseData;
 
     if (exerciseData && exerciseData.length > 0) {
-      const sortedData = sortData(exerciseData);
+      const sortedData = sortDataByDate(exerciseData);
 
       const weights = sortedData[0].weights;
 
@@ -110,6 +112,7 @@ const DiaryExerciseItem = (props) => {
     return placeholder;
   };
 
+  //Jos komponentin kentän arvo vaihtuu niin asetetaan uusi arvo stateen.
   const handleValueChange = (e) => {
     const temp = diaryExercise;
     temp.id = exercise._id;

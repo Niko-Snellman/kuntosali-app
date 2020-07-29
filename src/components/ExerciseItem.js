@@ -3,6 +3,7 @@ import { ListGroupItem, Row, Col, Label, Input } from "reactstrap";
 import PropTypes from "prop-types";
 
 const ExerciseItem = (props) => {
+  //Kun kentän arvo vaihtuu niin otetaan se talteen
   const handleChange = (e) => {
     props.saveValue(props.id, e.target.value, e.target.id);
   };

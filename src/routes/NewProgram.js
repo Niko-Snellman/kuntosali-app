@@ -14,18 +14,22 @@ const NewProgram = () => {
   const [programName, setProgramName] = useState("");
   const [programDesc, setProgramDesc] = useState("");
 
+  //Lisää tyhjän harjoituksen stateen
   const addExercise = () => {
     setExercises([...exercises, { name: "" }]);
   };
 
+  //Lidää ohjelman nimen stateen
   const handleNameChange = (event) => {
     setProgramName(event.target.value);
   };
 
+  //Lisää ohjelman kuvauksen stateen
   const handleProgramDescChange = (event) => {
     setProgramDesc(event.target.value);
   };
 
+  //Tallentaa ohjelman rajapintaan
   const saveProgram = (e) => {
     e.preventDefault();
 
@@ -49,6 +53,7 @@ const NewProgram = () => {
       });
   };
 
+  //Tallentaa harjoituksen kentän arvot stateen
   const saveValue = (index, value, id) => {
     var exerArray = exercises;
     switch (id) {

@@ -12,6 +12,7 @@ const NewDiary = () => {
   const [diaryExercises, setDiaryExercises] = useState([]);
   const [completionDate, setCompletionDate] = useState(currentDate);
 
+  //Haetaan kaikki ohjelmat rajapinnasta
   useEffect(() => {
     axios
       .get("/programs/")
@@ -28,6 +29,7 @@ const NewDiary = () => {
     setCompletionDate(e.target.value);
   };
 
+  //Tallennetaan kaikki ohjelman valitut suoritukset rajapintaan
   const saveDiary = (event) => {
     event.preventDefault();
     console.log(completionDate);
@@ -65,6 +67,7 @@ const NewDiary = () => {
     }
   };
 
+  //Päivitetään suorituksen data stateen
   const updateDiaryExercises = (diaryExercise) => {
     const exerArray = diaryExercises;
     const index = exerArray.findIndex((e) => e.id === diaryExercise.id);
@@ -78,6 +81,7 @@ const NewDiary = () => {
     setDiaryExercises(exerArray);
   };
 
+  //Valitaan ohjelma dropdown listasta stateen
   const handleSelect = (program) => {
     console.log(program.exercises);
     setProgram(program);

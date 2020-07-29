@@ -10,6 +10,7 @@ const Programs = (props) => {
   const programsPath = "/kuntosali-app/ohjelmat";
   const newProgramPath = "/kuntosali-app/ohjelmat/uusi";
 
+  //Avataan uuden ohjelman luonti näkymän tai palaa takaisin
   const createNewClick = () => {
     setShowList(!showList);
     if (showList) {

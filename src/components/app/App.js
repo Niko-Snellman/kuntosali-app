@@ -18,6 +18,7 @@ import {
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
+  //toggle avaa sivun välilehdet
   const toggle = () => setIsOpen(!isOpen);
 
   return (

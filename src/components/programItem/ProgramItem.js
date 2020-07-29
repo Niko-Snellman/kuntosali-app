@@ -5,6 +5,7 @@ import "./ProgramItem.css";
 import axios from "../../api/Axios";
 
 const ProgramItem = (props) => {
+  //Poistaa ohjelman rajapinnasta
   const handleClick = () => {
     axios
       .delete("/programs/", { data: { id: props.id } })
